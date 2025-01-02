@@ -1,0 +1,103 @@
+:root {
+    --clr-dark-black: #000001;
+    --clr-white: #fff;
+    --clr-aqua: aqua;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--clr-dark-black);
+    color: var(--clr-white);
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.game-box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .05rem;
+    position: relative;
+    background-color: var(--clr-aqua);
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.game-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-dark-black);
+    border-radius: 10px;
+    margin: .15rem;
+}
+
+.x {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.x::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--clr-aqua);
+    rotate: 45deg;
+    border-radius: 5px 5px 5px 5px;
+    opacity: 1;
+}
+
+.x::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--clr-aqua);
+    rotate: -45deg;
+    border-radius: 5px 5px 5px 5px;
+    opacity: 1;
+}
+
+.o {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px red solid;
+}
+
+.restart-btn {
+    border: none;
+    background-color: var(--clr-aqua);
+    font-size: medium;
+    padding: .5rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #fff;
+    transition: all .2s ease;
+}
+
+.restart-btn:hover {
+    transform: translate(1px, -1px);
+}
